@@ -1,0 +1,73 @@
+<div class="faq-container">
+  <!-- Hero Section -->
+  <div class="faq-hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="title-line">Frequently Asked</span>
+        <span class="title-line gradient-text">Questions</span>
+      </h1>
+      <p class="hero-subtitle">Everything you need to know about our digital marketing services</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100+</span>
+          <span class="stat-label">Happy Clients</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Support</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="faq-content">
+      <div class="faq-grid">
+        @for (item of faq; track $index) {
+          <div class="faq-item" 
+               [attr.data-faq-index]="$index"
+               (click)="toggleAccordion($index)">
+            <div class="faq-card">
+              <div class="card-glow"></div>
+              <div class="card-content">
+                <div class="faq-header">
+                  <div class="question-icon">{{ item.icon }}</div>
+                  <h3 class="question-text">{{ item.Question }}</h3>
+                  <div class="expand-icon">
+                    <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="faq-answer">
+                  <div class="answer-content">
+                    <p>{{ item.Answer }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="contact-cta">
+    <div class="cta-content">
+      <h2 class="cta-title">Still Have Questions?</h2>
+      <p class="cta-description">Get in touch with our experts for personalized answers</p>
+      <button class="cta-button">
+        <span>Contact Us</span>
+        <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M7 17L17 7M17 7H7M17 7V17"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+</div>

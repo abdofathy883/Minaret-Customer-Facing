@@ -1,0 +1,148 @@
+<div class="team-container">
+  <!-- Hero Section -->
+  <div class="team-hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="title-line">Meet The</span>
+        <span class="title-line gradient-text">Minaret Team</span>
+      </h1>
+      <p class="hero-subtitle">The creative minds behind digital transformation</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">{{ teamMembers.length }}+</span>
+          <span class="stat-label">Experts</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">{{ getDepartmentKeys().length }}</span>
+          <span class="stat-label">Departments</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Passion</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Executive Leadership -->
+  @if (teamHierarchy.executives.length > 0) {
+    <section class="leadership-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="section-icon">👑</span>
+          Executive Leadership
+        </h2>
+        <p class="section-description">Visionary leaders driving our strategic direction</p>
+      </div>
+      <div class="executives-grid">
+        @for (executive of teamHierarchy.executives; track executive.fullName) {
+          <div class="executive-card">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div class="profile-image">
+                <img [src]="executive.profilePicture" [alt]="executive.fullName" />
+                <div class="image-overlay">
+                  <div class="social-links">
+                    <a href="#" class="social-link">LinkedIn</a>
+                    <a href="#" class="social-link">Twitter</a>
+                  </div>
+                </div>
+              </div>
+              <div class="member-info">
+                <h3 class="member-name">{{ executive.fullName }}</h3>
+                <p class="member-role">{{ executive.jobTitle }}</p>
+                <p class="member-bio">{{ executive.bio }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+  }
+
+  <!-- Team Leaders -->
+  @if (teamHierarchy.teamLeaders.length > 0) {
+    <section class="leaders-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="section-icon">🎯</span>
+          Team Leaders
+        </h2>
+        <p class="section-description">Department heads steering our specialized teams</p>
+      </div>
+      <div class="leaders-grid">
+        @for (leader of teamHierarchy.teamLeaders; track leader.fullName) {
+          <div class="leader-card">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div class="profile-image">
+                <img [src]="leader.profilePicture" [alt]="leader.fullName" />
+              </div>
+              <div class="member-info">
+                <h3 class="member-name">{{ leader.fullName }}</h3>
+                <p class="member-role">{{ leader.jobTitle }}</p>
+                <p class="member-bio">{{ leader.bio }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+  }
+
+  <!-- Departments -->
+  <section class="departments-section">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="section-icon">🚀</span>
+        Our Departments
+      </h2>
+      <p class="section-description">Specialized teams working together to deliver excellence</p>
+    </div>
+
+    <div class="departments-container">
+      @for (departmentKey of getDepartmentKeys(); track departmentKey) {
+        @if (teamHierarchy.departments[departmentKey].length > 0) {
+          <div class="department">
+            <div class="department-header">
+              <h3 class="department-title">{{ departmentKey }}</h3>
+              <span class="department-count">{{ teamHierarchy.departments[departmentKey].length }} members</span>
+            </div>
+            
+            <div class="department-grid">
+              @for (member of teamHierarchy.departments[departmentKey]; track member.fullName) {
+                <div class="member-card">
+                  <div class="card-glow"></div>
+                  <div class="card-content">
+                    <div class="profile-image">
+                      <img [src]="member.profilePicture" [alt]="member.fullName" />
+                    </div>
+                    <div class="member-info">
+                      <h4 class="member-name">{{ member.fullName }}</h4>
+                      <p class="member-role">{{ member.jobTitle }}</p>
+                      <p class="member-bio">{{ member.bio }}</p>
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        }
+      }
+    </div>
+  </section>
+
+  <!-- Join Us CTA -->
+  <section class="join-us-section">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to Join Our Team?</h2>
+      <p class="cta-description">We're always looking for talented individuals to join our mission</p>
+      <button class="cta-button">
+        <span>View Open Positions</span>
+        <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M7 17L17 7M17 7H7M17 7V17"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+</div>

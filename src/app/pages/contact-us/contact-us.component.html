@@ -1,0 +1,428 @@
+<!-- Hero Section with Enhanced Design -->
+<section class="hero-section position-relative">
+  <div class="hero-overlay"></div>
+  <div class="container">
+      <div class="text-center text-white">
+        <div class="hero-content">
+          <h1 class="display-2 fw-bold mb-4 hero-title">
+            {{ "contactUs.title" | translate }}
+          </h1>
+          <p class="lead fs-4 mb-5 hero-subtitle">
+            {{ "contactUs.subtitle" | translate }}
+          </p>
+          <div class="hero-stats d-flex justify-content-center gap-5 mt-5">
+            <div class="stat-item text-center">
+              <div class="stat-number h2 mb-0 text-warning">40%</div>
+              <div class="stat-label">Growth Rate</div>
+            </div>
+            <div class="stat-item text-center">
+              <div class="stat-number h2 mb-0 text-warning">1.2M</div>
+              <div class="stat-label">Reach</div>
+            </div>
+            <div class="stat-item text-center">
+              <div class="stat-number h2 mb-0 text-warning">7.5K</div>
+              <div class="stat-label">Projects</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- Get in Touch Section -->
+<section class="get-touch-section py-5">
+  <div class="container">
+    <div class="row align-items-center min-vh-50">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="">
+          <div class="d-inline-block mb-2">
+            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">
+              <i class="bi bi-rocket me-2"></i>Get Started
+            </span>
+          </div>
+          <h2 class="display-5 fw-bold text-white mb-2">
+            {{ "contactUs.get" | translate }}
+            <span class="text-warning">{{
+              "contactUs.in_touch" | translate
+            }}</span>
+          </h2>
+          <h4 class="h3 text-warning mb-3 fw-normal">
+            {{ "contactUs.sub_heading" | translate }}
+          </h4>
+          <p class="lead text-white mb-5">
+            {{ "contactUs.description" | translate }}
+          </p>
+          <div class="cta-buttons">
+            <button
+              class="btn btn-warning px-5 py-3 rounded-pill me-3 mb-3"
+            >
+              <i class="bi bi-calendar me-2"></i>Schedule Meeting
+            </button>
+            <button
+              class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill mb-3"
+            >
+              <i class="bi bi-phone me-2"></i>Call Now
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="image-wrapper position-relative">
+          <div class="main-image">
+            <img
+              src="./assets/2.png"
+              alt="Contact Us"
+              class="img-fluid rounded-4 shadow-lg"
+            />
+          </div>
+          <div class="floating-card card-1">
+            <div class="card border-0 shadow">
+              <div class="card-body p-3">
+                <div class="d-flex align-items-center">
+                  <div class="icon-wrapper bg-warning rounded-circle p-2 me-3">
+                    <i class="fas fa-chart-line text-dark"></i>
+                  </div>
+                  <div>
+                    <div class="fw-bold text-dark">Growth</div>
+                    <div class="text-muted small">+40% This Month</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="floating-card card-2">
+            <div class="card border-0 shadow">
+              <div class="card-body p-3">
+                <div class="d-flex align-items-center">
+                  <div class="icon-wrapper bg-success rounded-circle p-2 me-3">
+                    <i class="fas fa-users text-white"></i>
+                  </div>
+                  <div>
+                    <div class="fw-bold text-dark">Clients</div>
+                    <div class="text-muted small">500+ Happy</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="contact-form-section py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Form Column -->
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="form-container">
+          <div class="section-header mb-3">
+
+            <h3 class="display-5 fw-bold text-white mb-1">
+              {{ "contactUs.form_title" | translate }}
+            </h3>
+            <p class="lead text-white">
+              {{ "contactUs.form_subTitle" | translate }}
+            </p>
+          </div>
+
+          <form
+            [formGroup]="contactForm"
+            (ngSubmit)="onSubmit()"
+            class="contact-form"
+          >
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fullName"
+                    placeholder="Your Name"
+                    formControlName="fullName"
+                  />
+                  <label for="fullName" class="text-muted">
+                    <i class="bi bi-person me-2"></i
+                    >{{ "form.name" | translate }}
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="companyName"
+                    placeholder="Company Name"
+                    formControlName="companyName"
+                  />
+                  <label for="companyName" class="text-muted">
+                    <i class="bi bi-building me-2"></i
+                    >{{ "form.company" | translate }}
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-floating">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Email Address"
+                    formControlName="email"
+                  />
+                  <label for="email" class="text-muted">
+                    <i class="bi bi-envelope me-2"></i
+                    >{{ "form.email" | translate }}
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="form-floating">
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phoneNumber"
+                    placeholder="Phone Number"
+                    formControlName="phoneNumber"
+                    #phoneInput
+                  />
+                  <label for="phoneNumber" class="text-muted">
+                    <i class="bi bi-phone me-2"></i
+                    >{{ "form.phone" | translate }}
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <div class="form-floating">
+                <select
+                  class="form-select"
+                  id="desiredService"
+                  formControlName="desiredService"
+                >
+                  <option value="">Choose a service</option>
+                  <option value="digital-marketing">Digital Marketing</option>
+                  <option value="seo">SEO Services</option>
+                  <option value="social-media">Social Media Marketing</option>
+                  <option value="web-design">Web Design</option>
+                  <option value="branding">Branding</option>
+                  <option value="consulting">Consulting</option>
+                </select>
+                <label for="desiredService" class="text-muted">
+                  <i class="bi bi-gear me-2"></i
+                  >{{ "form.service" | translate }}
+                </label>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <div class="form-floating">
+                <textarea
+                  class="form-control"
+                  id="projectBrief"
+                  style="height: 120px"
+                  placeholder="Tell us about your project"
+                  formControlName="projectBrief"
+                ></textarea>
+                <label for="projectBrief" class="text-muted">
+                  <i class="bi bi-file-earmark-text me-2"></i
+                  >{{ "form.brief" | translate }}
+                </label>
+              </div>
+            </div>
+
+            <div class="d-grid">
+              <button
+                type="submit"
+                class="btn btn-warning rounded-pill position-relative overflow-hidden"
+              >
+                @if (isLoading) {
+                <span
+                  class="spinner-border spinner-border-sm me-2"
+                  aria-hidden="true"
+                ></span>
+                {{ "form.submitting" | translate }}
+                } @else {
+                <i class="fas fa-paper-plane me-2"></i>
+                {{ "form.submit" | translate }}
+                }
+                <div class="btn-shine"></div>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Map Column -->
+      <div class="col-lg-6">
+        <div class="map-container">
+          <div class="map-header mb-4">
+            <h4 class="h3 text-white mb-1">
+              <i class="bi bi-map-marker-alt me-2 text-warning"></i>
+              Our Locations
+            </h4>
+            <p class="text-white">
+              Visit us at any of our offices across the region
+            </p>
+          </div>
+
+          <div class="map-wrapper position-relative">
+            <div class="single-map">
+              <google-map
+                [height]="'500px'"
+                [width]="'100%'"
+                [options]="mapOptions"
+              >
+                @for (office of officeLocations; track $index) {
+                <map-marker [position]="office"></map-marker>
+                }
+              </google-map>
+            </div>
+
+            <!-- Map Overlay Info -->
+            <!-- <div class="map-overlay-info">
+              <div class="location-card">
+                <div class="card border-0 shadow-lg">
+                  <div class="card-body p-4">
+                    <div class="d-flex align-items-start">
+                      <div
+                        class="location-icon bg-warning rounded-circle p-3 me-3"
+                      >
+                        <i class="bi bi-map-marker-alt text-dark"></i>
+                      </div>
+                      <div>
+                        <h6 class="fw-bold mb-2">The Minaret Agency</h6>
+                        <p class="text-muted small mb-1">
+                          <i class="bi bi-location-dot me-1"></i>
+                          Apt 30, (C) Tower, University Towers, Taha Hussein St,
+                          El-Minya, Egypt
+                        </p>
+                        <p class="text-muted small mb-0">
+                          <i class="fas fa-location-dot me-1"></i>
+                          Al Khoudh St, Sib 211, Oman
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Information Section -->
+<section class="contact-info-section py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="contact-card h-100">
+          <div class="card border-0 shadow-lg h-100">
+            <div class="card-body p-4 text-center">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-door-open icon me-3"></i>
+                <h5 class="card-title text-white">Our Doors Are Open</h5>
+              </div>
+              <p class="card-text mb-4 text-white">
+                Visit us at our offices for face-to-face consultations and
+                personalized service.
+              </p>
+              <div class="addresses">
+                <div class="address-item mb-3">
+                  <div class="d-flex align-items-start">
+                    <i class="fas fa-map-marker-alt text-warning me-2 mt-1"></i>
+                    <div class="text-start">
+                      <div class="fw-bold">Egypt Office</div>
+                      <small class="text-white"
+                        >Apt 30, (C) Tower, University Towers, Taha Hussein St,
+                        El-Minya, Egypt</small
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="address-item">
+                  <div class="d-flex align-items-start">
+                    <i class="fas fa-map-marker-alt text-warning me-2 mt-1"></i>
+                    <div class="text-start">
+                      <div class="fw-bold">Oman Office</div>
+                      <small class="text-white"
+                        >Al Khoudh St, Sib 211, Oman</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="contact-card h-100">
+          <div class="card border-0 shadow-lg h-100">
+            <div class="card-body p-4 text-center">
+              <div class="d-flex align-items-center mb-3">
+                <i class="icon bi bi-phone me-3"></i>
+                <h5 class="card-title text-white">Direct Lines to Our Team</h5>
+              </div>
+              <p class="card-text mb-4 text-white">
+                Get in touch with our specialized teams for immediate assistance
+                and support.
+              </p>
+              <div class="contact-info">
+                <div class="row">
+                  <div class="col">
+                    <div class="contact-item d-flex gap-4">
+                      <i class="bi bi-telephone-fill contact-icon"></i>
+                      <div class="contact-details">
+                        <span class="contact-label text-start">Management</span>
+                        <a href="tel:+201151131131" class="contact-link"
+                          >+201151131131</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="contact-item d-flex gap-4">
+                      <i class="bi bi-telephone-fill contact-icon"></i>
+                      <div class="contact-details">
+                        <span class="contact-label text-start">Sales</span>
+                        <a href="tel:+966560394593" class="contact-link"
+                          >+966560394593</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="contact-item d-flex gap-4">
+                  <i class="bi bi-envelope-fill contact-icon"></i>
+                  <div class="contact-details">
+                    <span class="contact-label text-start">Email</span>
+                    <a
+                      href="mailto:info@theminaretagency.com"
+                      class="contact-link"
+                      >info&#64;theminaretagency.com</a
+                    >
+                  </div>
+                </div>
+
+                <app-social-icons></app-social-icons>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

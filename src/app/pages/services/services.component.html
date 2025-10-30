@@ -1,0 +1,297 @@
+<div class="services-container">
+  <!-- Hero Section -->
+  <div class="services-hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="title-line">Premium Digital</span>
+        <span class="title-line gradient-text">Marketing Services</span>
+      </h1>
+      <p class="hero-subtitle">Transform your business with our award-winning digital marketing solutions that deliver measurable results</p>
+      
+      <div class="hero-stats">
+        @for (stat of stats; track stat.label) {
+          <div class="stat">
+            <span class="stat-number">{{ stat.number }}</span>
+            <span class="stat-label">{{ stat.label }}</span>
+          </div>
+        }
+      </div>
+
+      <div class="hero-cta">
+        <button class="cta-button primary">
+          <span>Get Free Consultation</span>
+          <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+          </svg>
+        </button>
+        <button class="cta-button secondary">
+          <span>View Our Work</span>
+          <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M21 12H9"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Grid -->
+  <section class="services-section">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="section-icon">🚀</span>
+        Our Premium Services
+      </h2>
+      <p class="section-description">Comprehensive digital marketing solutions tailored to your business goals</p>
+    </div>
+
+    <div class="services-grid">
+      @for (service of services; track service.id) {
+        <div class="service-card container py-4 px-4" (click)="selectService(service)">
+          <div class="card-glow" [style.background]="'linear-gradient(45deg, ' + service.color + ', ' + (service.color === '#00ffe0' ? '#ff00c8' : '#00ffe0') + ')'"></div>
+          <div class="row">
+            <div class="col d-flex flex-column align-items-center justify-content-center">
+              <div class="service-icon" [style.background-color]="service.color + '20'">
+                {{ service.icon }}
+              </div>
+              <div class="service-info">
+                <h3 class="service-title">{{ service.title }}</h3>
+                <p class="service-subtitle">{{ service.subtitle }}</p>
+              </div>
+            </div>
+            <div class="col">
+              <p class="service-description">{{ service.description }}</p>
+            
+            <div class="service-features">
+              @for (feature of service.features.slice(0, 3); track feature) {
+                <span class="feature-tag">{{ feature }}</span>
+              }
+              <span class="feature-more">+{{ service.features.length - 3 }} more</span>
+            </div>
+
+            <div class="service-footer">
+              <div class="service-price">{{ service.price }}</div>
+              <div class="service-results">{{ service.results }}</div>
+            </div>
+
+            <button class="service-button">
+              <span>Learn More</span>
+              <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!-- <div class="service-card" (click)="selectService(service)">
+          <div class="card-glow" [style.background]="'linear-gradient(45deg, ' + service.color + ', ' + (service.color === '#00ffe0' ? '#ff00c8' : '#00ffe0') + ')'"></div>
+          <div class="card-content">
+            <div class="service-header">
+              <div class="service-icon" [style.background-color]="service.color + '20'">
+                {{ service.icon }}
+              </div>
+              <div class="service-info">
+                <h3 class="service-title">{{ service.title }}</h3>
+                <p class="service-subtitle">{{ service.subtitle }}</p>
+              </div>
+            </div>
+            
+            <p class="service-description">{{ service.description }}</p>
+            
+            <div class="service-features">
+              @for (feature of service.features.slice(0, 3); track feature) {
+                <span class="feature-tag">{{ feature }}</span>
+              }
+              <span class="feature-more">+{{ service.features.length - 3 }} more</span>
+            </div>
+
+            <div class="service-footer">
+              <div class="service-price">{{ service.price }}</div>
+              <div class="service-results">{{ service.results }}</div>
+            </div>
+
+            <button class="service-button">
+              <span>Learn More</span>
+              <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </button>
+          </div>
+        </div> -->
+      }
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-choose-section">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="section-icon">⭐</span>
+        Why Choose The Minaret Agency?
+      </h2>
+      <p class="section-description">The reasons why industry leaders trust us with their digital marketing</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Proven Results</h3>
+        <p>We don't just promise results - we deliver them. Our clients see an average 300% increase in ROI within 6 months.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👥</div>
+        <h3>Expert Team</h3>
+        <p>Our certified professionals bring years of experience and stay ahead of the latest digital marketing trends.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Data-Driven</h3>
+        <p>Every strategy is backed by comprehensive analytics and continuous optimization for maximum performance.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Transparent Reporting</h3>
+        <p>Get detailed monthly reports with clear metrics, insights, and recommendations for your business growth.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Fast Implementation</h3>
+        <p>We move quickly to implement strategies and start delivering results within 2 weeks of project kickoff.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤝</div>
+        <h3>Dedicated Support</h3>
+        <p>Your dedicated account manager is always available to answer questions and optimize your campaigns.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="section-icon">💬</span>
+        What Our Clients Say
+      </h2>
+      <p class="section-description">Real results from real businesses that trust us with their growth</p>
+    </div>
+
+    <div class="testimonials-grid">
+      @for (testimonial of testimonials; track testimonial.name) {
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text">{{ testimonial.content }}</p>
+            <div class="rating">
+              @for (star of [1,2,3,4,5]; track star) {
+                <span class="star">⭐</span>
+              }
+            </div>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">{{ testimonial.avatar }}</div>
+            <div class="author-info">
+              <h4 class="author-name">{{ testimonial.name }}</h4>
+              <p class="author-role">{{ testimonial.role }}</p>
+              <p class="author-company">{{ testimonial.company }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="final-cta">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to Transform Your Business?</h2>
+      <p class="cta-description">Join 500+ successful businesses that trust The Minaret Agency for their digital marketing needs</p>
+      
+      <div class="cta-buttons">
+        <button class="cta-button primary large">
+          <span>Start Your Free Consultation</span>
+          <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+          </svg>
+        </button>
+        <button class="cta-button secondary large">
+          <span>Download Our Case Studies</span>
+          <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14,2 14,8 20,8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10,9 9,9 8,9"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="cta-guarantee">
+        <div class="guarantee-icon">🛡️</div>
+        <p class="guarantee-text">30-Day Money-Back Guarantee • No Long-Term Contracts • Cancel Anytime</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Service Modal -->
+@if (selectedService) {
+  <div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeModal()">×</button>
+      
+      <div class="modal-header">
+        <div class="modal-icon" [style.background-color]="selectedService.color + '20'">
+          {{ selectedService.icon }}
+        </div>
+        <div class="modal-info">
+          <h2 class="modal-title">{{ selectedService.title }}</h2>
+          <p class="modal-subtitle">{{ selectedService.subtitle }}</p>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-description">{{ selectedService.description }}</p>
+        
+        <div class="modal-features">
+          <h3>What's Included:</h3>
+          <ul>
+            @for (feature of selectedService.features; track feature) {
+              <li>{{ feature }}</li>
+            }
+          </ul>
+        </div>
+
+        <div class="modal-results">
+          <div class="result-item">
+            <span class="result-label">Investment:</span>
+            <span class="result-value">{{ selectedService.price }}</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Expected Results:</span>
+            <span class="result-value">{{ selectedService.results }}</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Success Stories:</span>
+            <span class="result-value">{{ selectedService.clients }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="modal-button primary">
+          <span>Get Started Now</span>
+          <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+          </svg>
+        </button>
+        <button class="modal-button secondary" (click)="closeModal()">
+          <span>Close</span>
+        </button>
+      </div>
+    </div>
+  </div>
+}

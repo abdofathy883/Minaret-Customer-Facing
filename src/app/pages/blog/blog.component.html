@@ -1,0 +1,52 @@
+<!-- Magazine Hero -->
+<section class="blog-hero">
+
+</section>
+
+<!-- Sticky Category Pills -->
+<nav class="filter-bar py-3" role="tablist" aria-label="Categories">
+  <div class="filter-track text-center d-flex justify-content-center gap-2 relative">
+    <button
+      class="cat-btn"
+      [class.active]="activeCategory === null"
+      (click)="setActiveCategory(null)"
+    >
+      All
+    </button>
+    @for (cat of blogCategories; track cat.id) {
+    <button
+      class="cat-btn"
+      [class.active]="activeCategory === cat.name"
+      (click)="setActiveCategory(cat.name)"
+    >
+      {{ cat.name }}
+    </button>
+    }
+  </div>
+</nav>
+
+
+
+<section class="posts py-5">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      @for (post of latestPosts; track post.id) {
+      <div class="col">
+        <article class="mag-card" aria-label="Open post">
+          <img class="mag-image" [src]="post.featuredImage" [alt]="post.title" />
+          
+          <button class="mag-cta" aria-label="Open post">
+            <i class="bi bi-arrow-up-right"></i>
+          </button>
+
+          <div class="mag-content">
+            <div class="chip small">{{ post.category }}</div>
+            <h3 class="mag-title">{{ post.title }}</h3>
+            <p class="mag-snippet">{{ post.content }}</p>
+          </div>
+        </article>
+      </div>
+      }
+    </div>
+  </div>
+</section>

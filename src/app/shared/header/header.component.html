@@ -1,0 +1,69 @@
+<header class="hero-header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">
+        <img
+          src="./assets/The Minaret Agency.png"
+          alt="The Minaret Agency Logo"
+          width="150px"
+        />
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+          <a
+            class="nav-link"
+            routerLink="/"
+            routerLinkActive="active"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >{{ 'header.home' | translate }}</a
+          >
+          <a class="nav-link" routerLink="/about-us" routerLinkActive="active"
+            >{{ 'header.about_us' | translate }}</a
+          >
+          <a
+            class="nav-link"
+            routerLink="/our-services"
+            routerLinkActive="active"
+            >{{ 'header.our_services' | translate }}</a
+          >
+          <a class="nav-link" routerLink="/portfolio" routerLinkActive="active"
+            >{{ 'header.portfolio' | translate }}</a
+          >
+          <a class="nav-link" routerLink="/blog" routerLinkActive="active"
+            >{{ 'header.blog' | translate }}</a
+          >
+          <a class="nav-link" routerLink="/contact-us" routerLinkActive="active"
+            >{{ 'header.contact_us' | translate }}</a
+          >
+        </div>
+
+        <div class="language-switcher ms-3">
+          <div
+            class="switcher-container"
+            (click)="toggleLanguageMenu()"
+            [class.open]="isLanguageMenuOpen"
+          >
+            <div class="current-language">
+              <i class="bi bi-translate"></i>
+              <span>{{ currentLang.toUpperCase() }}</span>
+              <i class="bi bi-chevron-down switcher-arrow"></i>
+            </div>
+
+            <div class="language-dropdown" [class.show]="isLanguageMenuOpen">
+              <div class="language-option" (click)="switchLanguage('en')">
+                <div class="lang-icon">EN</div>
+                <span>English</span>
+              </div>
+              <div class="language-option" (click)="switchLanguage('ar')">
+                <div class="lang-icon">AR</div>
+                <span>العربية</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

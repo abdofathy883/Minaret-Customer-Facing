@@ -1,0 +1,26 @@
+.projects {
+    background-color: var(--mov-color);
+}
+
+.cat-btn {
+    background: white;
+    color: var(--mov-color);
+    border: none;
+    padding: 8px 20px;
+    margin: 0 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.cat-btn.active {
+    background: var(--orange-color);
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.15);
+}
+
+.cat-btn:hover {
+    background: var(--orange-color);
+    color: #fff;
+}

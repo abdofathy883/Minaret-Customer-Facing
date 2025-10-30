@@ -1,0 +1,17 @@
+<section class="hero"></section>
+
+
+<section class="projects py-4">
+  <div class="container text-center">
+    <button class="cat-btn"
+    [ngClass]="{ 'active': activeCategory === null }"
+    (click)="setActiveCategory(null)"
+    >All</button>
+    @for(cat of categories; track $index) {
+    <button class="cat-btn"
+    [ngClass]="{ 'active': activeCategory === cat.title }"
+    (click)="setActiveCategory(cat.title)"
+    >{{ cat.title }}</button>
+    }
+  </div>
+</section>

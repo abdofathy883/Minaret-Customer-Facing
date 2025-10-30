@@ -1,0 +1,32 @@
+{
+    "header": {
+        "home": "Home",
+        "about_us": "About Us",
+        "our_services": "Our Services",
+        "portfolio": "Portfolio",
+        "blog": "Blog",
+        "contact_us": "Contact Us"
+    },
+    "contactUs": {
+        "title": "Contact Us",
+        "subtitle": "We would love to hear from you!",
+        "get": "Get",
+        "in_touch": "In Touch",
+        "sub_heading": "Embark on Your Brand's Success Journey With us",
+        "description": "Ready to Elevate your digital Presence and drive your brand Towards unparalleled Success? At The Minaret Marketing Agency, we're More than just a team; we're your strategic Partners in Navigating the vast digital Landscape. Let's Collaborate to turn your vision into Reality. Contact us today, and together, we'll embark on a journey that transforms your brand's Potential into Performance",
+        "form_title": "Fill This Form To Join us",
+        "form_subTitle": "Embark on Your Brand's Success Journey With us",
+        "egypt_office": "Egypt Office",
+        "oman_office": "Oman Office"
+    },
+    "form": {
+        "name": "Name",
+        "company": "Company Name",
+        "email": "Email",
+        "phone": "Phone Number",
+        "service": "Desired Service",
+        "brief": "Project Brief",
+        "submit": "Submit",
+        "submitting": "Submitting..."
+    }
+}
